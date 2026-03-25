@@ -4,22 +4,20 @@ cp -rv ./* ~/.config/
 
 cp ~/.config/fish/functions/fish_greeting.fish.ssh ~/.config/fish/functions/fish_greeting.fish
 
-sudo apt install neofetch exa ncdu bat zoxide fzf fd-find playerctl python3-dev python3-pip python3-setuptools 
+sudo apt install neofetch exa ncdu bat zoxide fzf fd-find playerctl python3-dev python3-pip python3-setuptools thefuck
 
-pip3 install thefuck --user
-
-curl -LO https://github.com/ClementTsang/bottom/releases/latest/download/bottom_x86_64-unknown-linux-gnu.deb
-sudo dpkg -i bottom_x86_64-unknown-linux-gnu.deb
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.12.3/bottom_0.12.3-1_amd64.deb
+sudo dpkg -i bottom_0.12.3-1_amd64.deb
 
 abbr -a fd fdfind
 thefuck --alias >> ~/.config/fish/config.fish
-zoxide init fish | source
 echo "zoxide init fish | source" > ~/.config/fish/config.fish
 
 curl -sS https://starship.rs/install.sh | sh
-starship init fish | source
 echo "starship init fish | source" > ~/.config/fish/config.fish
 
 source ~/.config/fish/config.fish
 
 fish_greeting
+starship init fish | source
+zoxide init fish | source
