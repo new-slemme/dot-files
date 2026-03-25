@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-cp ./* ~/.config/
+cp -rv ./* ~/.config/
 
 sudo apt install neofetch exa ncdu bat zoxide fzf fd-find
 
