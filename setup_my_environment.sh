@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-cp -rv ./ ~/.config/
+cp -rv ~/dot-files ~/.config/
 
 cp ~/.config/fish/functions/fish_greeting.fish.ssh ~/.config/fish/functions/fish_greeting.fish
 cp ~/.config/neofetch/config_base.conf ~/.config/neofetch/config.conf
