@@ -1,0 +1,171 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+
+format = """
+[](fg:#162d3d)\
+$os\
+$username\
+[](fg:#162d3d bg:blue)\
+$git_branch\
+$git_status\
+[](fg:blue bg:#162d3d)\
+$directory\
+[](fg:#162d3d)\
+$fill\
+[](fg:#162d3d)\
+$status\
+$cmd_duration\
+$jobs\
+${custom.ssh}\
+$battery\
+$time\
+[](fg:#162d3d)\
+[ ](bg: fg:)\
+\n$character"""
+
+[username]
+disabled = false
+format = "[$user ](bg:#162d3d fg:#FF6B35)"
+
+[os]
+disabled = false
+style = "bg:#162d3d fg:#FF6B35"
+format = "[ $symbol ](bg:#162d3d fg:#FF6B35)"
+
+[os.symbols]
+Ubuntu = ""
+Zorin  = ""
+Debian = ""
+Arch   = "󰣇"
+
+[directory]
+style = "bg:#162d3d"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+"mine" = ""
+"commander-tracker" = ""
+"cc-auto" = ""
+"nixxia" = ""
+"edh-son-android" = "󰄜"
+
+"cloned" = "󱢇 "
+
+".claude" = "🦀"
+".openclaw" = "󰅏"
+".ssh" = "󰢹"
+".config" = ""
+
+"docker" = ""
+
+[git_branch]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol $branch ](fg:#10121a bg:blue)]($style)'
+
+[git_status]
+style = "bg:blue"
+format = '[[($all_status$ahead_behind )](fg:#10121a bg:blue)]($style)'
+
+[package]
+style = "bg:#162d3d"
+format = '[[ 📦 $version ](fg:#f9e2af bg:#162d3d)]($style)'
+display_private = true
+
+[direnv]
+disabled = false
+style = "bg:#162d3d"
+format = '[[ direnv ](fg:#a6e3a1 bg:#162d3d)]($style)'
+
+[docker_context]
+style = "bg:#162d3d"
+format = '[[  $context ](fg:#89dceb bg:#162d3d)]($style)'
+
+[custom.todo]
+command = "rg -n 'TODO|FIXME' . 2>/dev/null | wc -l | tr -d ' '"
+when = "command -v rg >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1"
+style = "bg:#162d3d"
+format = '[[  $output ](fg:#fab387 bg:#162d3d)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#162d3d"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#162d3d)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#162d3d"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#162d3d)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#162d3d"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#162d3d)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#162d3d"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#162d3d)]($style)'
+
+[fill]
+symbol = " "
+
+[status]
+disabled = false
+symbol = "✘ "
+style = "bg:#162d3d"
+format = '[[ $symbol$status ](fg:#f38ba8 bg:#162d3d)]($style)'
+
+[cmd_duration]
+min_time = 1200
+show_notifications = true
+min_time_to_notify = 10000
+style = "bg:#162d3d"
+format = '[[  $duration ](fg:#f9e2af bg:#162d3d)]($style)'
+
+[jobs]
+symbol = "✦ "
+symbol_threshold = 1
+number_threshold = 1
+style = "bg:#162d3d"
+format = '[[ $symbol$number ](fg:#89b4fa bg:#162d3d)]($style)'
+
+[battery]
+disabled = false
+format = '[](fg:blue bg:#162d3d)[ $symbol$percentage ]($style)[](fg:blue bg:#162d3d)'
+
+[[battery.display]]
+threshold = 15
+style = 'fg:#f38ba8 bg:blue bold'
+
+[[battery.display]]
+threshold = 35
+style = 'fg:#f9e2af bg:blue bold'
+
+[[battery.display]]
+threshold = 100
+style = 'fg:#a6e3a1 bg:blue'
+
+[custom.ssh]
+command = "sh -c 'printf \"󰌘 %s\" $(hostname | cut -d. -f1)'"
+when = "[ -n \"$SSH_CONNECTION\" ] || [ -n \"$SSH_TTY\" ]"
+style = "bg:#162d3d"
+format = '[](fg:blue bg:#162d3d)[  $output ](fg:#89dceb bg:blue)[](fg:blue bg:#162d3d)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#162d3d"
+format = '[[  $time ](fg:#a0a9cb bg:#162d3d)]($style)'
+
+[character]
+success_symbol = '[❯](bold #a6e3a1)'
+error_symbol = '[❯](bold #f38ba8)'
+vimcmd_symbol = '[❮](bold #89b4fa)'

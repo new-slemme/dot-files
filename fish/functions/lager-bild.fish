@@ -1,0 +1,3 @@
+function lager-bild --wraps='ssh new-lager-pi -t "rm *.png && grim ./screenshot-new.png" &&  rsync -av --delete -e "ssh" new-lager-pi:/home/motodox/screenshot-new.png ~/screenshot-new.png && tycat -g 150x150 ~/screenshot-new.png' --description 'alias lager-bild=ssh new-lager-pi -t "rm *.png && grim ./screenshot-new.png" &&  rsync -av --delete -e "ssh" new-lager-pi:/home/motodox/screenshot-new.png ~/screenshot-new.png && tycat -g 150x150 ~/screenshot-new.png'
+  ssh new-lager-pi -t "rm *.png && grim ./screenshot-new.png" &&  rsync -av --delete -e "ssh" new-lager-pi:/home/motodox/screenshot-new.png ~/screenshot-new.png && tycat -g 150x150 ~/screenshot-new.png $argv; 
+end

@@ -1,0 +1,31 @@
+
+function fish_greeting
+
+	#alias push-nagios=~/.nagios/push
+	#tybg ~/Bilder/wall/solid.png
+	#player_control
+
+	#rm -f ~/.cache/thumbnails/neofetch/*
+
+	#if test -f ~/art.jpg
+	#	echo
+	#else
+	#	cp (random choice ~/Bilder/neofetch/*) ~/art.jpg
+	#end
+
+	#alias pcd="/home/t.dahlem@mtx.int/.scripts/pcd.sh"
+	#alias pcn="clear; playerctl next; pcw"
+	#alias pcp="clear; playerctl previous; pcw"
+	#alias pch="clear; playerctl play-pause; pcw"
+	#alias pcw='sleep 2; clear; rm ~/.cache/thumbnails/neofetch/*; curl -sk (playerctl metadata mpris:artUrl) > ~/art.jpg; neofetch; cp (random choice ~/Bilder/neofetch/*) ~/art.jpg'
+	#alias pcl="playerctl loop"
+	#alias pcv="playerctl volume"
+
+	#player_control
+        #jp2a /home/t.dahlem@mtx.int/Bilder/Icons/militech.jpg
+
+	#Test
+	clear
+	neofetch
+
+end
