@@ -5,7 +5,7 @@ cp -rv ./ ~/.config/
 cp ~/.config/fish/functions/fish_greeting.fish.ssh ~/.config/fish/functions/fish_greeting.fish
 cp ~/.config/neofetch/config_base.conf ~/.config/neofetch/config.conf
 
-sudo apt install neofetch exa ncdu bat zoxide fzf fd-find playerctl thefuck
+sudo apt install -y neofetch exa ncdu bat zoxide fzf fd-find playerctl thefuck
 
 #python3-dev python3-pip python3-setuptools
 
